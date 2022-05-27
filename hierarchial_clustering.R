@@ -17,3 +17,23 @@ hc1 <- hclust(d, method = "complete" )
 
 # Plot the obtained dendrogram
 plot(hc1, cex = 0.6, hang = -1)
+
+rect.hclust(hc1 , k = 3, border = 2:6)
+
+# Phylogenic
+Phylo <- fviz_dend(hc1, cex = 0.8, lwd = 0.8, k = 3,
+                   rect = TRUE,
+                   k_colors = "jco",
+                   rect_border = "jco",
+                   rect_fill = TRUE,
+                   type = "phylogenic")
+Phylo
+
+# Circular
+Circ <- fviz_dend(hc1, cex = 0.8, lwd = 0.8, k = 3,
+                  rect = TRUE,
+                  k_colors = "jco",
+                  rect_border = "jco",
+                  rect_fill = TRUE,
+                  type = "circular")
+Circ
